@@ -13,4 +13,10 @@ class TestController extends Controller
             ->format('a4')
             ->save('invoice.pdf');
     }
+
+    public function activityLog()
+    {
+        activity()->log('Look, I logged something');
+        dd(\Spatie\Activitylog\Models\Activity::all());
+    }
 }

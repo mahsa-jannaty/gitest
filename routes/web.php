@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $users = \App\Models\User::all();
-
     return view('welcome');
 });
 
 Route::get('/test/laravel-pdf', [\App\Http\Controllers\TestController::class, 'laravelPdf']);
+Route::get('/test/activityLog', [\App\Http\Controllers\TestController::class, 'activityLog']);
