@@ -19,4 +19,13 @@ class TestController extends Controller
         activity()->log('Look, I logged something');
         dd(\Spatie\Activitylog\Models\Activity::all());
     }
+
+    public function permissions()
+    {
+        //    $role = \Spatie\Permission\Models\Role::create(['name' => 'writer']);
+//    $permission = \Spatie\Permission\Models\Permission::create(['name' => 'edit articles']);
+        $role = \Spatie\Permission\Models\Role::where('name', 'writer')->first();
+        $role->givePermissionTo(\Spatie\Permission\Models\Permission::first());
+
+    }
 }
